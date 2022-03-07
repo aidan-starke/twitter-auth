@@ -1,14 +1,14 @@
 import NextAuth from "next-auth";
 import TwitterProvider from "next-auth/providers/twitter";
 
-const { NEXTAUTH_SECRET, TWITTER_ID, TWITTER_SECRET }: any = process.env;
+const { NEXT_PUBLIC_NEXTAUTH_SECRET, NEXT_PUBLIC_TWITTER_ID, NEXT_PUBLIC_TWITTER_SECRET }: any = process.env;
 
 export default NextAuth({
-	secret: NEXTAUTH_SECRET,
+	secret: NEXT_PUBLIC_NEXTAUTH_SECRET,
 	providers: [
 		TwitterProvider({
-			clientId: TWITTER_ID,
-			clientSecret: TWITTER_SECRET,
+			clientId: NEXT_PUBLIC_TWITTER_ID,
+			clientSecret: NEXT_PUBLIC_TWITTER_SECRET,
 			version: "2.0",
 		}),
 	],
